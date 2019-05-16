@@ -1,17 +1,17 @@
 <?php
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $client = new \GuzzleHttp\Client();
-$reader = \League\Csv\AbstractCsv::createFromPath($argv[1]);
+$reader = \League\Csv\Reader::createFromPath($argv[1]);
 
 foreach ($reader as $csvRow) {
     try {
-        $response = $client->request('get', $csvRow[1]);
+        $response = $client->request('get', $csvRow[0]);
         if ($response->getStatusCode() != 200) {
-            print_r($csvRow[0]);
+            throw new \Exception();
         }
     } catch (\Exception $ex) {
-        print_r($csvRow[0]);
+        echo $csvRow[0] . PHP_EOL;
     }
 }
