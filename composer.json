@@ -1,20 +1,26 @@
 {
-    "name": "havery/scanner",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "hongwenyao",
-            "email": "yaohwen123@163.com"
-        }
-    ],
-    "require": {
-        "guzzlehttp/guzzle": "^6.3",
-        "league/csv": "^9.2"
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.laravel-china.org"
-        }
+  "name": "havery/scanner",
+  "license": "MIT",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "hongwenyao",
+      "email": "yaohwen123@163.com"
     }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^6.3",
+    "league/csv": "^9.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Havery\\": "src/"
+    }
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.laravel-china.org"
+    }
+  }
 }
